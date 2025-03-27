@@ -1,0 +1,107 @@
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+a:hover {
+    color: #535bf2;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 1.1;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.addTask {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    .addTask-input {
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 0.25em;
+        font-size: 1em;
+        width: 100%;
+    }
+    .addTask-button {
+        width: 100px;
+        padding: 0.4em;
+        border: 1px solid #ccc;
+        border-radius: 0.25em;
+        background-color: #06a50e;
+        color: white;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.25s;
+        &:hover {
+            background-color: #4bec00;
+            color: #000000;
+        }
+    }
+}
+
+.listTasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em;
+    padding: 0;
+    .listTasks-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5em 1em;
+        border-bottom: 1px solid #ccc;
+        span {
+            font-size: 1em;
+            margin-right: 1em;
+            cursor: pointer;
+        }
+        .listTasks-delete {
+            padding: 0.3em 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 0.25em;
+            background-color: #991f1f;
+            color: white;
+            font-size: 0.7em;
+            cursor: pointer;
+            transition: background-color 0.25s;
+            &:hover {
+                background-color: #f81212;
+            }
+        }
+    }
+}

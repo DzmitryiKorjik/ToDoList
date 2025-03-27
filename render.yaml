@@ -1,0 +1,16 @@
+services:
+    - type: web
+      name: todo-app-mern
+      env: node
+      plan: free
+      buildCommand: |
+          npm install
+          npm run build
+          cd server && npm install
+      startCommand: node server/app.js
+      rootDir: .
+      envVars:
+          - key: PORT
+            value: 8080
+          - key: VITE_API_URL
+            value: https://todo-app-express-api.onrender.com
