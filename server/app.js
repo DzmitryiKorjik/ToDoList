@@ -20,7 +20,11 @@ const MONGO_URL = process.env.MONGO_URL;
 async function connectToMongo() {
     try {
         const client = new MongoClient(MONGO_URL, {
-            serverSelectionTimeoutMS: 5000,
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            tls: true, // Включает TLS
+            tlsInsecure: false, // Гарантирует безопасное соединение
+            serverSelectionTimeoutMS: 5000, // Ждет 5 сек перед ошибкой
         });
         await client.connect();
         console.log('Connected successfully to MongoDB');
