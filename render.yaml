@@ -7,10 +7,4 @@ services:
           npm install
           npm run build
           cd server && npm install
-      startCommand: node server/app.js
-      rootDir: .
-      envVars:
-          - key: PORT
-            value: 8080
-          - key: VITE_API_URL
-            value: https://todo-app-mern-bz88.onrender.com
+      startCommand: cd server && npm run start
