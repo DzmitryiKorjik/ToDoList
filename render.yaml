@@ -1,21 +1,35 @@
 services:
-    - type: web
-      name: todo-app-backend
-      env: node
-      plan: free
+    # Définition du service backend (serveur Node.js)
+    - type: web # Service web dynamique
+      name: todo-app-backend # Nom du service backend
+      env: node # Environnement d'exécution (Node.js)
+      plan: free # Utilisation du plan gratuit sur Render
+
+      # Commandes exécutées lors du build (installation des dépendances)
       buildCommand: |
-          cd server
-          npm install
-      startCommand: cd server && npm start
+          cd server  # Aller dans le dossier `server`
+          npm install  # Installer les dépendances du serveur
+
+      # Commande pour démarrer le serveur
+      startCommand: cd server && npm start # Aller dans `server` et démarrer l'application
+
+      # Variables d'environnement pour le backend
       envVars:
-          - key: PORT
+          - key: PORT # Port sur lequel le serveur écoute
             value: 8080
 
-    - type: static
-      name: todo-app-frontend
-      plan: free
-      buildCommand: npm install && npm run build
-      staticPublishPath: dist
+    # Définition du service frontend (React)
+    - type: static # Service statique (hébergement du frontend)
+      name: todo-app-frontend # Nom du service frontend
+      plan: free # Plan gratuit
+
+      # Commande pour construire l'application frontend
+      buildCommand: npm install && npm run build # Installation des dépendances et build de l'application
+
+      # Chemin du dossier où Render trouvera les fichiers à servir
+      staticPublishPath: dist # Le dossier `dist` contient les fichiers générés par `npm run build`
+
+      # Variables d'environnement pour le frontend
       envVars:
-          - key: VITE_API_URL
+          - key: VITE_API_URL # URL de l'API backend utilisée par le frontend
             value: 'https://todo-app-mern-77ok.onrender.com'
