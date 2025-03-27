@@ -19,7 +19,9 @@ const MONGO_URL = process.env.MONGO_URL;
 
 async function connectToMongo() {
     try {
-        const client = new MongoClient(MONGO_URL);
+        const client = new MongoClient(MONGO_URL, {
+            serverSelectionTimeoutMS: 5000,
+        });
         await client.connect();
         console.log('Connected successfully to MongoDB');
         return client.db('tasks');
