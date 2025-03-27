@@ -101,6 +101,10 @@ ToDoList/
 -   `PORT` : Port sur lequel le serveur backend s'exécutera (par défaut: 5000)
 -   `JWT_SECRET` : Clé secrète pour la génération des tokens JWT
 
+### Déploiement
+
+-   Le projet sera déployé sur **Render**. Accédez à l'application ici : [To Do](https://todo-app-mern-77ok.onrender.com/).
+
 ## API Endpoints
 
 ### Auth
